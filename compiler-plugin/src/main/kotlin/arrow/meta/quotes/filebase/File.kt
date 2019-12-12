@@ -28,20 +28,20 @@ import org.jetbrains.kotlin.psi.stubs.KotlinFileStub
  * import arrow.meta.quotes.file
  *
  * val Meta.reformatFile: Plugin
- *   get() =
- *     "ReformatFile" {
- *       meta(
- *        file({ true }) { f ->
- *          Transform.replace(
- *            replacing = f,
- *            newDeclaration = {
- *               val fileContents = """ $packageDirective $importList $classes """
- *               file(name, fileContents)
- *            }
- *          )
- *        }
- *       )
- *     }
+ *    get() =
+ *      "Reformat File" {
+ *        meta(
+ *          file({ true }) { file ->
+ *            Transform.replace(
+ *              replacing = file,
+ *              newDeclaration = {
+ *                val fileContents = """ $packageDirective $importList $classes """
+ *                file(name, fileContents)
+ *              }
+ *            )
+ *          }
+ *        )
+ *      }
  * ```
  */
 class File(
